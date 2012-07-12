@@ -1,0 +1,10 @@
+== <font color="blue">TMapTypeControlOptions class</font> ==
+
+Options for the map type control
+
+
+=== Properties ===
+
+ * property MapTypeIds: TMapTypeIds
+  * TMapTypeIds = set of TMapTypeId;
+    *TMapTypeId = (mtHYBRID, mtROADMAP, mtSATELLITE, mtTERRAIN) <font color="green">see [https://developers.google.com/maps/documentation/javascript/reference?hl=en#MapTypeId this page]</font>
