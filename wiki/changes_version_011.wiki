@@ -3,9 +3,9 @@
 April 16, 2012
  * Google Maps Library v0.1.1
  * Improvement: new component added, the TGMPolyline to create polylines.
- * Improvement: TInfoWindow => added AutoOpen property.
- * Improvement: TInfoWindow => added event OnPositionChange.
- * Improvement: JavaScript => A lot of changes into JavaScript functions to make it more generic
+ * Improvement: TInfoWindow => added !AutoOpen property.
+ * Improvement: TInfoWindow => added event !OnPositionChange.
+ * Improvement: !JavaScript => A lot of changes into !JavaScript functions to make it more generic
  * Improvement: TGMLinkedComponent => added Clear method.
  * Improvement: TGMLinkedComponent => added Assign method.
  * Improvement: TLinkedComponents => added Clear method.
