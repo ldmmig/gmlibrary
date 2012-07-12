@@ -19,6 +19,6 @@ Into package you can find this files and folders:
  * \Classes => uml of classes that are involved in designing the components. The design of the classes has been done with the [http://staruml.sourceforge.net/en/ StarUML] program.
  * \dpk => packages of components
  * \lib => compiled unit of components. A folder for each version of Delphi.
- * \Licence => licence (GNU GENERAL PUBLIC LICENSE v3).
+ * \Licence => licence (GNU GENERAL PUBLIC LICENSE [http://www.gnu.org/licenses/gpl.html GPL v3]).
  * \Resources => resources like images, resource files or HTML map.
  * \src => source code
