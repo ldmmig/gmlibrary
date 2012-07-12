@@ -20,3 +20,7 @@ Options for the map type control
     * TMapTypeControlStyle = (mtcDEFAULT, mtcDROPDOWN_MENU, mtcHORIZONTAL_BAR)  -->  <font color="green">see [https://developers.google.com/maps/documentation/javascript/reference?hl=en#MapTypeControlStyle this page] for more information</font>
 
       Menu style
+
+ * property Show: Boolean
+
+      Specified if the control is shown or not
