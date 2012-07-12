@@ -2,7 +2,7 @@
 
 Into package you can find this files and folders:
 
- * \Changeslog.txt
+ * \!ChangesLog.txt
  * \Install.txt
  * \Demos=> folder with demos
    * \bin => exe files
@@ -14,7 +14,7 @@ Into package you can find this files and folders:
    * \GMPolyline => demo program for TGMPolyline class
    * \GMRectangle => demo program for TGMRectangle class
    * \lib => compiles files for all demos
-   * \Megademo => demo program for all components
+   * \!MegaDemo => demo program for all components
  * \Docs => documentation on OO format of all classes of the Google Maps API that are involved into the creation of this components.
  * \Classes => uml of classes that are involved in designing the components. The design of the classes has been done with the <a title="StarIML en sourceforge" href="http://staruml.sourceforge.net/en/" target="_blank">StarUML</a> program.
  * \dpk => packages of components
