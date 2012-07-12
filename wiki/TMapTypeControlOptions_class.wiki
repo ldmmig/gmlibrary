@@ -9,7 +9,14 @@ Options for the map type control
   * TMapTypeIds = set of TMapTypeId;
     * !TMapTypeId = (mtHYBRID, mtROADMAP, mtSATELLITE, mtTERRAIN)  -->  <font color="green">see [https://developers.google.com/maps/documentation/javascript/reference?hl=en#MapTypeId this page] for more information</font>
 
-     IDs of map types to show in the control.
+      IDs of map types to show in the control.
 
  * property Position: TControlPosition
     * TControlPosition = (cpBOTTOM_CENTER, cpBOTTOM_LEFT, cpBOTTOM_RIGHT, cpLEFT_BOTTOM, cpLEFT_CENTER, cpLEFT_TOP, cpRIGHT_BOTTOM, cpRIGHT_CENTER, cpRIGHT_TOP, cpTOP_CENTER, cpTOP_LEFT, cpTOP_RIGHT)  -->  <font color="green">see [https://developers.google.com/maps/documentation/javascript/reference?hl=en#ControlPosition this page] for more information</font>
+
+      Position into the map to show de control
+
+ * property Style: TMapTypeControlStyle
+    * TMapTypeControlStyle = (mtcDEFAULT, mtcDROPDOWN_MENU, mtcHORIZONTAL_BAR)  -->  <font color="green">see [https://developers.google.com/maps/documentation/javascript/reference?hl=en#MapTypeControlStyle this page] for more information</font>
+
+      Menu style
