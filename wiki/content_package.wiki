@@ -16,7 +16,7 @@ Into package you can find this files and folders:
    * \lib => compiles files for all demos
    * \!MegaDemo => demo program for all components
  * \Docs => documentation on OO format of all classes of the Google Maps API that are involved into the creation of this components.
- * \Classes => uml of classes that are involved in designing the components. The design of the classes has been done with the <a title="StarIML en sourceforge" href="http://staruml.sourceforge.net/en/" target="_blank">StarUML</a> program.
+ * \Classes => uml of classes that are involved in designing the components. The design of the classes has been done with the [http://staruml.sourceforge.net/en/ StarUML] program.
  * \dpk => packages of components
  * \lib => compiled unit of components. A folder for each version of Delphi.
  * \Licence => licence (GNU GENERAL PUBLIC LICENSE v3).
