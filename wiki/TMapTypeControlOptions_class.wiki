@@ -12,4 +12,4 @@ Options for the map type control
      IDs of map types to show in the control.
 
  * property Position: TControlPosition
-    * TControlPosition = (cpBOTTOM_CENTER, cpBOTTOM_LEFT, cpBOTTOM_RIGHT, cpLEFT_BOTTOM, cpLEFT_CENTER, cpLEFT_TOP, cpRIGHT_BOTTOM, cpRIGHT_CENTER, cpRIGHT_TOP, cpTOP_CENTER, cpTOP_LEFT, cpTOP_RIGHT)
+    * TControlPosition = (cpBOTTOM_CENTER, cpBOTTOM_LEFT, cpBOTTOM_RIGHT, cpLEFT_BOTTOM, cpLEFT_CENTER, cpLEFT_TOP, cpRIGHT_BOTTOM, cpRIGHT_CENTER, cpRIGHT_TOP, cpTOP_CENTER, cpTOP_LEFT, cpTOP_RIGHT)  -->  <font color="green">see [https://developers.google.com/maps/documentation/javascript/reference?hl=en#ControlPosition this page] for more information</font>
