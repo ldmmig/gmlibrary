@@ -7,6 +7,12 @@ GMClasses class
 =========================================================================
 History:
 
+ver
+  ES:
+    nuevo: TLinePoint -> añadida propiedad Tag
+  EN:
+    new: TLinePoint -> added Tag property
+
 ver 1.1.0
   ES:
     nuevo: General -> compilado para XE4
@@ -94,13 +100,13 @@ Copyright (©) 2011, by Xavier Martinez (cadetill)
   The GMClasses unit includes basse classes or support classes.
 
   @author Xavier Martinez (cadetill)
-  @version 1.5.0
+  @version 1.5.2
 -------------------------------------------------------------------------------}
 {=------------------------------------------------------------------------------
   La unit GMClasses incluye clases bases o de apoyo.
 
   @author Xavier Martinez (cadetill)
-  @version 1.5.0
+  @version 1.5.2
 -------------------------------------------------------------------------------}
 unit GMClasses;
 
@@ -304,6 +310,7 @@ type
   TLinePoint = class(TCollectionItem)
   private
     FLatLng: TLatLng;
+    FTag: Integer;
     function GetLat: Real;
     function GetLng: Real;
     procedure SetLat(const Value: Real);
@@ -416,6 +423,13 @@ type
       Longitud del punto.
     -------------------------------------------------------------------------------}
     property Lng: Real read GetLng write SetLng;
+    {*------------------------------------------------------------------------------
+      Tag.
+    -------------------------------------------------------------------------------}
+    {=------------------------------------------------------------------------------
+      Tag.
+    -------------------------------------------------------------------------------}
+    property Tag: Integer read FTag write FTag default 0;
   end;
 
   {*------------------------------------------------------------------------------
@@ -617,7 +631,7 @@ type
       La propiedad APIUrl muestra una url a la página del API de Google Maps relacionada.
     -------------------------------------------------------------------------------}
     property APIUrl: string read GetAPIUrl;
-    property Language: TLang read FLanguage write FLanguage;
+    property Language: TLang read FLanguage write FLanguage default English;
     property AboutGMLib: string read FAboutGMLib stored False;
   end;
 
@@ -799,8 +813,8 @@ type
 
     property OnChange: TNotifyEvent read FOnChange write FOnChange;
   published
-    property Height: Integer read FHeight write SetHeight;
-    property Width: Integer read FWidth write SetWidth;
+    property Height: Integer read FHeight write SetHeight default 0;
+    property Width: Integer read FWidth write SetWidth default 0;
   end;
 
   {*------------------------------------------------------------------------------
@@ -944,10 +958,10 @@ type
     property OnCloseOtherBeforeOpenChange: TNotifyEvent read FOnCloseOtherBeforeOpenChange write FOnCloseOtherBeforeOpenChange;
   published
     property HTMLContent: string read FHTMLContent write SetHTMLContent;
-    property DisableAutoPan: Boolean read FDisableAutoPan write SetDisableAutoPan;
-    property MaxWidth: Integer read FMaxWidth write SetMaxWidth;  // 0 = no MaxWidth
+    property DisableAutoPan: Boolean read FDisableAutoPan write SetDisableAutoPan default False;
+    property MaxWidth: Integer read FMaxWidth write SetMaxWidth default 0;  // 0 = no MaxWidth
     property PixelOffset: TGMSize read FPixelOffset write SetPixelOffset; // (0,0) = no pixelOffset
-    property CloseOtherBeforeOpen: Boolean read FCloseOtherBeforeOpen write SetCloseOtherBeforeOpen;
+    property CloseOtherBeforeOpen: Boolean read FCloseOtherBeforeOpen write SetCloseOtherBeforeOpen default True;
   end;
 
 implementation
@@ -963,19 +977,21 @@ uses
 
 procedure TLinePoint.Assign(Source: TPersistent);
 begin
+  inherited;
+
   if Source is TLinePoint then
   begin
     Lat := TLinePoint(Source).Lat;
     Lng := TLinePoint(Source).Lng;
-  end
-  else
-    inherited Assign(Source);
+    Tag := TLinePoint(Source).Tag;
+  end;
 end;
 
 constructor TLinePoint.Create(Collection: TCollection);
 begin
   inherited;
 
+  FTag := 0;
   FLatLng := TLatLng.Create;
   FLatLng.OnChange := OnChangeFLatLng;
 end;
@@ -1163,7 +1179,7 @@ constructor TGMBase.Create(AOwner: TComponent);
 begin
   inherited;
 
-  Language := Espanol;
+  Language := English;
   FAboutGMLib := GMLIB_Version;
 end;
 
@@ -1350,7 +1366,9 @@ end;
 function TLatLng.StringToReal(Value: string): Real;
 begin
   if {$IFDEF DELPHIXE}FormatSettings.DecimalSeparator{$ELSE}DecimalSeparator{$ENDIF} = ',' then
-    Value := StringReplace(Value, '.', ',', [rfReplaceAll]);
+    Value := StringReplace(Value, '.', ',', [rfReplaceAll])
+  else
+    Value := StringReplace(Value, ',', '.', [rfReplaceAll]);
   try
     Result := StrToFloat(Value);
   except

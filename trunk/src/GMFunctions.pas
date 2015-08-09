@@ -61,13 +61,13 @@ Copyright (©) 2012, by Xavier Martinez (cadetill)
   Unit with a general functions.
 
   @author Xavier Martinez (cadetill)
-  @version 1.5.0
+  @version 1.5.2
 -------------------------------------------------------------------------------}
 {=------------------------------------------------------------------------------
   Unidad con funciones de caracter general.
 
   @author Xavier Martinez (cadetill)
-  @version 1.5.0
+  @version 1.5.2
 -------------------------------------------------------------------------------}
 unit GMFunctions;
 
@@ -1147,6 +1147,12 @@ begin
   begin
     if Result <> '' then Result := Result + Delimiter;
     Result := Result + 'mtTERRAIN';
+  end;
+
+  if mtOSM in MapTypeIds then
+  begin
+    if Result <> '' then Result := Result + Delimiter;
+    Result := Result + 'mtOSM';
   end;
 end;
 

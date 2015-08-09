@@ -35,13 +35,13 @@ Copyright (©) 2011, by Xavier Martinez (cadetill)
   The GMConstants unit includes constants ans sets.
 
   @author Xavier Martinez (cadetill)
-  @version 1.5.0
+  @version 1.5.2
 -------------------------------------------------------------------------------}
 {=------------------------------------------------------------------------------
   La unit GMConstants incluye constantes y conjuntos.
 
   @author Xavier Martinez (cadetill)
-  @version 1.5.0
+  @version 1.5.2
 -------------------------------------------------------------------------------}
 unit GMConstants;
 
@@ -51,8 +51,8 @@ const
   { ****************************************************************************
   ******  Version
   **************************************************************************** }
-  GMLIB_Version = '[1.5.0 Final]';
-  GMLIB_VerText = '1.5.0 Final';
+  GMLIB_Version = '[1.5.2 Final]';
+  GMLIB_VerText = '1.5.2 Final';
 
   { ****************************************************************************
   ******  Editors
@@ -341,7 +341,7 @@ type
   { ****************************************************************************
   https://developers.google.com/maps/documentation/javascript/reference?hl=en#MapTypeId
   **************************************************************************** }
-  TMapTypeId = (mtHYBRID, mtROADMAP, mtSATELLITE, mtTERRAIN);
+  TMapTypeId = (mtHYBRID, mtROADMAP, mtSATELLITE, mtTERRAIN, mtOSM);
   TMapTypeIds = set of TMapTypeId;
   { ****************************************************************************
   https://developers.google.com/maps/documentation/javascript/reference?hl=en#MapTypeControlStyle

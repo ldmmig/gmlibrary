@@ -96,13 +96,13 @@ web  http://www.cadetill.com
   The GMLinkedComponent unit includes the base classes that represent an object into the Google Maps map.
 
   @author Xavier Martinez (cadetill)
-  @version 1.5.0
+  @version 1.5.2
 -------------------------------------------------------------------------------}
 {=------------------------------------------------------------------------------
   La unidad GMLinkedComponent incluye las clases bases que representan un objete en un mapa de Google Maps.
 
   @author Xavier Martinez (cadetill)
-  @version 1.5.0
+  @version 1.5.2
 -------------------------------------------------------------------------------}
 unit GMLinkedComponents;
 
@@ -311,7 +311,7 @@ type
     {=------------------------------------------------------------------------------
       Si true, el InfoWindos se muestra cuando el ratón entra en el objeto y se cierra cuando sale.
     -------------------------------------------------------------------------------}
-    property ShowInfoWinMouseOver: Boolean read FShowInfoWinMouseOver write SetShowInfoWinMouseOver;
+    property ShowInfoWinMouseOver: Boolean read FShowInfoWinMouseOver write SetShowInfoWinMouseOver default False;
   public
     {*------------------------------------------------------------------------------
       Constructor class
@@ -361,7 +361,7 @@ type
     {=------------------------------------------------------------------------------
       La propiedad Tag no tiene un sentido específico. Puede almacenar un valor entero adicional para comodidad del programador.
     -------------------------------------------------------------------------------}
-    property Tag: Integer read FTag write FTag;
+    property Tag: Integer read FTag write FTag default 0;
   end;
 
   TLinkedComponentClass = class of TLinkedComponent;
@@ -649,7 +649,7 @@ type
     {=------------------------------------------------------------------------------
       Si Active, modifica los objetos de forma automática, sino, necesita recargar el mapa.
     -------------------------------------------------------------------------------}
-    property AutoUpdate: Boolean read FAutoUpdate write SetAutoUpdate;
+    property AutoUpdate: Boolean read FAutoUpdate write SetAutoUpdate default True;
 
     // ES/EN: eventos/events
     {*------------------------------------------------------------------------------

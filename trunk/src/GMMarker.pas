@@ -178,13 +178,13 @@ Copyright (©) 2012, by Xavier Martinez (cadetill)
   The GMMarker unit includes the base classes needed to show markers on Google Map map using the component TGMMap.
 
   @author Xavier Martinez (cadetill)
-  @version 1.5.0
+  @version 1.5.2
 -------------------------------------------------------------------------------}
 {=------------------------------------------------------------------------------
   La unit GMMarker contiene las clases bases necesarias para mostrar marcadores en un mapa de Google Maps mediante el componente TGMMap
 
   @author Xavier Martinez (cadetill)
-  @version 1.5.0
+  @version 1.5.2
 -------------------------------------------------------------------------------}
 unit GMMarker;
 
@@ -269,8 +269,8 @@ type
     -------------------------------------------------------------------------------}
     procedure Assign(Source: TPersistent); override;
   published
-    property OnDrop: Boolean read FOnDrop write SetOnDrop;
-    property Bounce: Boolean read FBounce write SetBounce;
+    property OnDrop: Boolean read FOnDrop write SetOnDrop default False;
+    property Bounce: Boolean read FBounce write SetBounce default False;
   end;
 
   {*------------------------------------------------------------------------------
@@ -356,8 +356,8 @@ type
     -------------------------------------------------------------------------------}
     procedure Assign(Source: TPersistent); override;
   published
-    property Width: Integer read FWidth write SetWidth;
-    property Height: Integer read FHeight write SetHeight;
+    property Width: Integer read FWidth write SetWidth default 32;
+    property Height: Integer read FHeight write SetHeight default 32;
   end;
 
   {*------------------------------------------------------------------------------
@@ -443,8 +443,8 @@ type
     -------------------------------------------------------------------------------}
     procedure Assign(Source: TPersistent); override;
   published
-    property StyledIcon: TStyledIcon read FStyledIcon write SetStyledIcon;
-    property ShowStar: Boolean read FShowStar write SetShowStar;
+    property StyledIcon: TStyledIcon read FStyledIcon write SetStyledIcon default siMarker;
+    property ShowStar: Boolean read FShowStar write SetShowStar default False;
   end;
 
   {*------------------------------------------------------------------------------
@@ -815,19 +815,19 @@ type
     procedure CenterMapToMarker; deprecated;
     procedure CenterMapTo; override;
   published
-    property Direction: Integer read FDirection write SetDirection;
-    property MarkerType: TMarkerType read FMarkerType write SetMarkerType;
+    property Direction: Integer read FDirection write SetDirection default 0;
+    property MarkerType: TMarkerType read FMarkerType write SetMarkerType default mtStandard;
     property Animation: TAnimation read FAnimation write FAnimation;
-    property Clickable: Boolean read FClickable write SetClickable;
-    property Draggable: Boolean read FDraggable write SetDraggable;
-    property Flat: Boolean read FFlat write SetFlat;
+    property Clickable: Boolean read FClickable write SetClickable default True;
+    property Draggable: Boolean read FDraggable write SetDraggable default False;
+    property Flat: Boolean read FFlat write SetFlat default False;
     property Position: TLatLng read FPosition write FPosition;
     property Title: string read FTitle write SetTitle;
-    property Visible: Boolean read FVisible write SetVisible;
-    property Optimized: Boolean read FOptimized write SetOptimized;
-    property RaiseOnDrag: Boolean read FRaiseOnDrag write SetRaiseOnDrag;
+    property Visible: Boolean read FVisible write SetVisible default True;
+    property Optimized: Boolean read FOptimized write SetOptimized default True;
+    property RaiseOnDrag: Boolean read FRaiseOnDrag write SetRaiseOnDrag default True;
     property Icon: string read FIcon write SetIcon;
-    property CrossOnDrag: Boolean read FCrossOnDrag write SetCrossOnDrag;
+    property CrossOnDrag: Boolean read FCrossOnDrag write SetCrossOnDrag default True;
     {*------------------------------------------------------------------------------
       Index within the collection.
     -------------------------------------------------------------------------------}

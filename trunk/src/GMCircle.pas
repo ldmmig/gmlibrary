@@ -16,13 +16,19 @@ MODO DE USO/HOW TO USE
 =========================================================================
 History:
 
+ver 1.5.1
+  ES:
+    error: TCustomCircle -> error corregido en el método SetRadius (thanks Thierry)
+  EN:
+    bug: TCustomCircle -> bug fixed at SetRadius method (thanks Thierry)
+
 ver 1.4.1
   ES:
     error: TCustomCircle -> corregido error en método SetRadius (gracias Fred).
     error: TCustomSizeable -> corregido error en método OnTimer (gracias Fred).
   EN:
-    bug: TCustomCircle -> bug fixed un method SetRadius (thanks Fred).
-    bug: TCustomSizeable -> bug fixed un method OnTimer (thanks Fred).
+    bug: TCustomCircle -> bug fixed on method SetRadius (thanks Fred).
+    bug: TCustomSizeable -> bug fixed on method OnTimer (thanks Fred).
 
 ver 1.2.0
   ES:
@@ -94,13 +100,13 @@ Copyright (©) 2012, by Xavier Martinez (cadetill)
   The GMCircle unit includes the base classes needed to show circles on Google Map map using the component TGMMap.
 
   @author Xavier Martinez (cadetill)
-  @version 1.5.0
+  @version 1.5.2
 -------------------------------------------------------------------------------}
 {=------------------------------------------------------------------------------
   La unit GMCircle contiene las clases bases necesarias para mostrar círculos en un mapa de Google Maps mediante el componente TGMMap.
 
   @author Xavier Martinez (cadetill)
-  @version 1.5.0
+  @version 1.5.2
 -------------------------------------------------------------------------------}
 unit GMCircle;
 
@@ -230,12 +236,12 @@ type
     -------------------------------------------------------------------------------}
     procedure Assign(Source: TPersistent); override;
   published
-    property Active: Boolean read FActive write SetActive;
-    property Min: Integer read FMin write FMin;
-    property Max: Integer read FMax write FMax;
-    property Increment: Integer read FIncrement write FIncrement;
-    property Circular: Boolean read FCircular write FCircular;
-    property Speed: Integer read FSpeed write SetSpeed;
+    property Active: Boolean read FActive write SetActive default False;
+    property Min: Integer read FMin write FMin default 0;
+    property Max: Integer read FMax write FMax default 0;
+    property Increment: Integer read FIncrement write FIncrement default 100;
+    property Circular: Boolean read FCircular write FCircular default True;
+    property Speed: Integer read FSpeed write SetSpeed default 0;
   end;
 
   {*------------------------------------------------------------------------------
@@ -359,13 +365,13 @@ type
     procedure GetBounds(LLB: TLatLngBounds);
   published
     property Center: TLatLng read FCenter write FCenter;
-    property Clickable: Boolean read FClickable write SetClickable;
-    property Editable: Boolean read FEditable write SetEditable;
+    property Clickable: Boolean read FClickable write SetClickable default True;
+    property Editable: Boolean read FEditable write SetEditable default False;
     property FillOpacity: Real read FFillOpacity write SetFillOpacity; // 0 to 1
     property Radius: Real read FRadius write SetRadius;
     property StrokeOpacity: Real read FStrokeOpacity write SetStrokeOpacity; // 0 to 1
-    property StrokeWeight: Integer read FStrokeWeight write SetStrokeWeight; // 1 to 10
-    property Visible: Boolean read FVisible write SetVisible;
+    property StrokeWeight: Integer read FStrokeWeight write SetStrokeWeight default 2; // 1 to 10
+    property Visible: Boolean read FVisible write SetVisible default True;
     property AutoResize: TCustomSizeable read FAutoResize write FAutoResize;
     {*------------------------------------------------------------------------------
       InfoWindows associated object.
@@ -941,13 +947,12 @@ end;
 procedure TCustomCircle.SetRadius(const Value: Real);
 begin
   if FRadius = Value then Exit;
-  if not TCustomGMCircle(TCustomCircles(Collection).FGMLinkedComponent).IsMapActive then
-    Exit;
-
 
   FRadius := Value;
-
   if FRadius < 0 then FRadius := 0;
+
+  if not TCustomGMCircle(TCustomCircles(Collection).FGMLinkedComponent).IsMapActive then
+    Exit;
 
   if Assigned(Collection) and (Collection is TCustomCircles) and
      Assigned(TCustomCircles(Collection).FGMLinkedComponent) and

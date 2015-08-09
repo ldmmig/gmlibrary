@@ -128,7 +128,7 @@ type
     -------------------------------------------------------------------------------}
     function ContainsLocation(Lat, Lng: Real): Boolean; overload;
   published
-    property FillColor: TAlphaColor read FFillColor write SetFillColor;
+    property FillColor: TAlphaColor read FFillColor write SetFillColor default TAlphaColorRec.Red;
     property FillOpacity: Real read FFillOpacity write SetFillOpacity; // 0 to 1
   end;
 

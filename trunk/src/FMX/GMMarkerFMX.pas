@@ -120,9 +120,9 @@ type
 
     procedure Assign(Source: TPersistent); override;
   published
-    property PrimaryColor: TAlphaColor read FPrimaryColor write SetPrimaryColor;
-    property StrokeColor: TAlphaColor read FStrokeColor write SetStrokeColor;
-    property CornerColor: TAlphaColor read FCornerColor write SetCornerColor;
+    property PrimaryColor: TAlphaColor read FPrimaryColor write SetPrimaryColor default TAlphaColorRec.Red;
+    property StrokeColor: TAlphaColor read FStrokeColor write SetStrokeColor default TAlphaColorRec.Black;
+    property CornerColor: TAlphaColor read FCornerColor write SetCornerColor default TAlphaColorRec.White;
   end;
 
   {*------------------------------------------------------------------------------
@@ -176,9 +176,9 @@ type
 
     procedure Assign(Source: TPersistent); override;
   published
-    property BackgroundColor: TAlphaColor read FBackgroundColor write SetBackgroundColor;
-    property TextColor: TAlphaColor read FTextColor write SetTextColor;
-    property StarColor: TAlphaColor read FStarColor write SetStarColor;
+    property BackgroundColor: TAlphaColor read FBackgroundColor write SetBackgroundColor default TAlphaColorRec.Red;
+    property TextColor: TAlphaColor read FTextColor write SetTextColor default TAlphaColorRec.Black;
+    property StarColor: TAlphaColor read FStarColor write SetStarColor default TAlphaColorRec.Lime;
   end;
 
   {*------------------------------------------------------------------------------

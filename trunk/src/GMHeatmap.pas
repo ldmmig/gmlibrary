@@ -105,13 +105,13 @@ type
     property Count: Integer read GetCount;
     property Items[I: Integer]: TLinePoint read GetItems; default;
   published
-    property Show: Boolean read FShow write SetShow;
+    property Show: Boolean read FShow write SetShow default False;
     property Data: TLinePoints read FData write FData;
-    property Dissipating: Boolean read FDissipating write SetDissipating;
+    property Dissipating: Boolean read FDissipating write SetDissipating default False;
     property MaxIntensity: Real read FMaxIntensity write SetMaxIntensity;
     property Opacity: Real read FOpacity write SetOpacity;
-    property Radius: Integer read FRadius write SetRadius;
-    property Gradient: TGradient read FGradient write SetGradient;
+    property Radius: Integer read FRadius write SetRadius default 15;
+    property Gradient: TGradient read FGradient write SetGradient default grHot;
   end;
 
 implementation

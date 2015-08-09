@@ -94,8 +94,8 @@ type
 
     procedure Assign(Source: TPersistent); override;
   published
-    property FillColor: TAlphaColor read FFillColor write SetFillColor;
-    property StrokeColor: TAlphaColor read FStrokeColor write SetStrokeColor;
+    property FillColor: TAlphaColor read FFillColor write SetFillColor default TAlphaColorRec.Red;
+    property StrokeColor: TAlphaColor read FStrokeColor write SetStrokeColor default TAlphaColorRec.Black;
   end;
 
   {*------------------------------------------------------------------------------

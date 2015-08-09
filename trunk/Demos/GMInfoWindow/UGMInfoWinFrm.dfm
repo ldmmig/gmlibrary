@@ -1085,10 +1085,6 @@ object GMInfoWinFrm: TGMInfoWinFrm
     object TabSheet2: TTabSheet
       Caption = 'LatLngBounds'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Panel13: TPanel
         Left = 0
         Top = 0
@@ -2007,6 +2003,11 @@ object GMInfoWinFrm: TGMInfoWinFrm
     Layers.Panoramio.Filtered = False
     Layers.Panoramio.Clickable = True
     Layers.Panoramio.Show = False
+    Layers.Kml.Clickable = True
+    Layers.Kml.PreserveViewport = False
+    Layers.Kml.ScreenOverlays = True
+    Layers.Kml.SuppressInfoWindows = False
+    Layers.Kml.Show = False
     Layers.Traffic.Show = False
     Layers.Transit.Show = False
     Layers.Bicycling.Show = False
@@ -2016,6 +2017,7 @@ object GMInfoWinFrm: TGMInfoWinFrm
     Layers.Weather.SuppressInfoWindows = False
     Layers.Weather.TemperatureUnit = tuCELSIUS
     Layers.Weather.WindSpeedUnit = wsKILOMETERS_PER_HOUR
+    StreetView.Visible = False
     AfterPageLoaded = GMMap1AfterPageLoaded
     OnBoundsChanged = GMMap1BoundsChanged
     OnCenterChanged = GMMap1CenterChanged

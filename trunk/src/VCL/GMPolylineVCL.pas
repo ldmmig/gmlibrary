@@ -112,8 +112,8 @@ type
 
     procedure Assign(Source: TPersistent); override;
   published
-    property FillColor: TColor read FFillColor write SetFillColor;
-    property StrokeColor: TColor read FStrokeColor write SetStrokeColor;
+    property FillColor: TColor read FFillColor write SetFillColor default clRed;
+    property StrokeColor: TColor read FStrokeColor write SetStrokeColor default clRed;
   end;
 
   {*------------------------------------------------------------------------------
@@ -164,7 +164,7 @@ type
 
     procedure Assign(Source: TPersistent); override;
   published
-    property StrokeColor: TColor read FStrokeColor write SetStrokeColor;
+    property StrokeColor: TColor read FStrokeColor write SetStrokeColor default clBlack;
   end;
 
   {*------------------------------------------------------------------------------

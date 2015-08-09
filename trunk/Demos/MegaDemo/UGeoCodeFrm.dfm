@@ -27,10 +27,6 @@ object GeoCodeFrm: TGeoCodeFrm
     object tsMarkers: TTabSheet
       Caption = 'tsMarkers'
       TabVisible = False
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label1: TLabel
         Left = 16
         Top = 11
@@ -103,10 +99,6 @@ object GeoCodeFrm: TGeoCodeFrm
     TabOrder = 1
     object tsGeneral: TTabSheet
       Caption = 'General'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label9: TLabel
         Left = 48
         Top = 325
@@ -572,18 +564,10 @@ object GeoCodeFrm: TGeoCodeFrm
     object tsEvents: TTabSheet
       Caption = 'Events'
       ImageIndex = 2
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
     end
     object tsResults: TTabSheet
       Caption = 'Results'
       ImageIndex = 2
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label5: TLabel
         Left = 18
         Top = 19
@@ -619,10 +603,6 @@ object GeoCodeFrm: TGeoCodeFrm
     object tsXMLResult: TTabSheet
       Caption = 'XML'
       ImageIndex = 3
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object mXML: TMemo
         Left = 0
         Top = 0

@@ -134,7 +134,7 @@ type
     -------------------------------------------------------------------------------}
     function ContainsLocation(Lat, Lng: Real): Boolean; overload;
   published
-    property FillColor: TColor read FFillColor write SetFillColor;
+    property FillColor: TColor read FFillColor write SetFillColor default clRed;
     property FillOpacity: Real read FFillOpacity write SetFillOpacity; // 0 to 1
   end;
 

@@ -85,7 +85,7 @@ type
     {=------------------------------------------------------------------------------
       Color usado de fondo del Mapa cuando los mosaicos aun no han sido cargados.
     -------------------------------------------------------------------------------}
-    property BGColor: TAlphaColor read FBGColor write FBGColor;    // backgroundColor
+    property BGColor: TAlphaColor read FBGColor write FBGColor default clSilver;    // backgroundColor
   end;
 
   {*------------------------------------------------------------------------------
@@ -367,7 +367,7 @@ constructor TVisualProp.Create;
 begin
   inherited;
 
-  FBGColor := $00EEF0EF;
+  FBGColor := clSilver;
 end;
 
 function TVisualProp.GetBckgroundColor: string;
