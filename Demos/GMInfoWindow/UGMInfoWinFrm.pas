@@ -509,7 +509,7 @@ procedure TGMInfoWinFrm.Button3Click(Sender: TObject);
 var
   LL: TLatLng;
 begin
-  LL := TLatLng.Create(StrToFloat(eLat.Text), StrToFloat(eLng.Text));
+  LL := TLatLng.Create(StrToFloat(StringReplace(eLat.Text, '.', ',', [rfReplaceAll])), StrToFloat(StringReplace(eLng.Text, '.', ',', [rfReplaceAll])));
   try
     ShowMessage(BoolToStr(GMMap1.MapLatLngBoundsContains(LL), True));
   finally
@@ -737,8 +737,8 @@ end;
 procedure TGMInfoWinFrm.DoMap;
 begin
   // required properties
-  GMMap1.RequiredProp.Center.Lat := StrToFloat(eReqLat.Text);
-  GMMap1.RequiredProp.Center.Lng := StrToFloat(eReqLng.Text);
+  GMMap1.RequiredProp.Center.Lat := StrToFloat(StringReplace(eReqLat.Text, '.', ',', [rfReplaceAll]));
+  GMMap1.RequiredProp.Center.Lng := StrToFloat(StringReplace(eReqLng.Text, '.', ',', [rfReplaceAll]));
   GMMap1.RequiredProp.MapType := TTransform.StrToMapTypeId(cbTypMap.Text);
   GMMap1.RequiredProp.Zoom := tbZoom.Position;
   // non visual properties

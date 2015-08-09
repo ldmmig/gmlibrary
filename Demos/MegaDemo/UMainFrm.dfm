@@ -256,38 +256,15 @@ object MainFrm: TMainFrm
     end
   end
   object GMMap1: TGMMap
-    Language = English
-    Active = False
     IntervalEvents = 100
     Precision = 8
     RequiredProp.Center.Lat = 41.403185000000000000
     RequiredProp.Center.Lng = 2.173725000000000000
-    RequiredProp.MapType = mtHYBRID
+    RequiredProp.MapType = mtOSM
     RequiredProp.Zoom = 17
-    NonVisualProp.MaxZoom = 0
-    NonVisualProp.MinZoom = 0
-    NonVisualProp.MapMaker = False
-    Layers.Panoramio.Filtered = False
-    Layers.Panoramio.Clickable = True
-    Layers.Panoramio.Show = False
-    Layers.Kml.Clickable = True
-    Layers.Kml.PreserveViewport = False
-    Layers.Kml.ScreenOverlays = True
-    Layers.Kml.SuppressInfoWindows = False
-    Layers.Kml.Show = False
     Layers.Kml.Url = 
       'https://gmlibrary.googlecode.com/svn/trunk/Demos/bin/BarcelonaHo' +
       'tellochTuristGuide.kml'
-    Layers.Traffic.Show = False
-    Layers.Transit.Show = False
-    Layers.Bicycling.Show = False
-    Layers.Weather.Show = False
-    Layers.Weather.Clickable = True
-    Layers.Weather.LabelColor = lcBLACK
-    Layers.Weather.SuppressInfoWindows = False
-    Layers.Weather.TemperatureUnit = tuCELSIUS
-    Layers.Weather.WindSpeedUnit = wsKILOMETERS_PER_HOUR
-    StreetView.Visible = False
     AfterPageLoaded = GMMap1AfterPageLoaded
     OnBoundsChanged = GMMap1BoundsChanged
     OnCenterChanged = GMMap1CenterChanged
@@ -306,24 +283,6 @@ object MainFrm: TMainFrm
     OnPanoramioClick = GMMap1PanoramioClick
     OnActiveChange = GMMap1ActiveChange
     OnIntervalEventsChange = GMMap1IntervalEventsChange
-    VisualProp.MapTypeCtrl.Position = cpTOP_RIGHT
-    VisualProp.MapTypeCtrl.Style = mtcDEFAULT
-    VisualProp.MapTypeCtrl.Show = True
-    VisualProp.OverviewMapCtrl.Opened = True
-    VisualProp.OverviewMapCtrl.Show = True
-    VisualProp.PanCtrl.Position = cpTOP_LEFT
-    VisualProp.PanCtrl.Show = True
-    VisualProp.RotateCtrl.Position = cpTOP_LEFT
-    VisualProp.RotateCtrl.Show = True
-    VisualProp.ScaleCtrl.Position = cpBOTTOM_LEFT
-    VisualProp.ScaleCtrl.Style = scDEFAULT
-    VisualProp.ScaleCtrl.Show = True
-    VisualProp.StreetViewCtrl.Position = cpTOP_LEFT
-    VisualProp.StreetViewCtrl.Show = True
-    VisualProp.ZoomCtrl.Position = cpTOP_LEFT
-    VisualProp.ZoomCtrl.Style = zcDEFAULT
-    VisualProp.ZoomCtrl.Show = True
-    VisualProp.BGColor = clSilver
     WebBrowser = WebBrowser1
     Left = 40
     Top = 40
@@ -331,7 +290,6 @@ object MainFrm: TMainFrm
   object GMInfoWindow1: TGMInfoWindow
     Language = Espanol
     Map = GMMap1
-    AutoUpdate = True
     OnCloseClick = GMMarker1CloseClick
     OnHTMLContentChange = GMMarker1HTMLContentChange
     OnDisableAutoPanChange = GMMarker1DisableAutoPanChange
@@ -340,11 +298,8 @@ object MainFrm: TMainFrm
     OnCloseOtherBeforeOpenChange = GMMarker1CloseOtherBeforeOpenChange
     VisualObjects = <
       item
-        Tag = 0
         DisableAutoPan = False
         MaxWidth = 0
-        PixelOffset.Height = 0
-        PixelOffset.Width = 0
         CloseOtherBeforeOpen = True
         AutoOpen = True
       end>
@@ -355,7 +310,6 @@ object MainFrm: TMainFrm
   object GMPolygon1: TGMPolygon
     Language = Espanol
     Map = GMMap1
-    AutoUpdate = True
     OnCloseClick = GMMarker1CloseClick
     OnHTMLContentChange = GMMarker1HTMLContentChange
     OnDisableAutoPanChange = GMMarker1DisableAutoPanChange
@@ -364,14 +318,8 @@ object MainFrm: TMainFrm
     OnCloseOtherBeforeOpenChange = GMMarker1CloseOtherBeforeOpenChange
     VisualObjects = <
       item
-        Tag = 0
-        Clickable = True
-        Editable = False
-        Geodesic = False
         StrokeOpacity = 1.000000000000000000
-        StrokeWeight = 2
         Visible = False
-        AutoUpdatePath = True
         LinePoints = <
           item
             Lat = 41.403185000000000000
@@ -385,14 +333,7 @@ object MainFrm: TMainFrm
             Lat = 41.415713950000000000
             Lng = 2.162254230000000000
           end>
-        InfoWindow.DisableAutoPan = False
-        InfoWindow.MaxWidth = 0
-        InfoWindow.PixelOffset.Height = 0
-        InfoWindow.PixelOffset.Width = 0
-        InfoWindow.CloseOtherBeforeOpen = True
         Text = 'TPol'
-        StrokeColor = clBlack
-        FillColor = clRed
         FillOpacity = 0.500000000000000000
       end>
     OnClick = GMMarker1Click
@@ -419,7 +360,6 @@ object MainFrm: TMainFrm
   object GMRectangle1: TGMRectangle
     Language = Espanol
     Map = GMMap1
-    AutoUpdate = True
     OnCloseClick = GMMarker1CloseClick
     OnHTMLContentChange = GMMarker1HTMLContentChange
     OnDisableAutoPanChange = GMMarker1DisableAutoPanChange
@@ -428,23 +368,14 @@ object MainFrm: TMainFrm
     OnCloseOtherBeforeOpenChange = GMMarker1CloseOtherBeforeOpenChange
     VisualObjects = <
       item
-        Tag = 0
         Bounds.SW.Lat = 41.405425970000000000
         Bounds.SW.Lng = 2.114303500000000000
         Bounds.NE.Lat = 41.430014180000000000
         Bounds.NE.Lng = 2.142799720000000000
-        Clickable = True
-        Editable = False
         FillOpacity = 0.200000000000000000
         StrokeOpacity = 1.000000000000000000
         StrokeWeight = 3
-        Visible = True
         InfoWindow.HTMLContent = 'Aix'#242' '#233's una prova d'#39'una finestra d'#39'informaci'#243
-        InfoWindow.DisableAutoPan = False
-        InfoWindow.MaxWidth = 0
-        InfoWindow.PixelOffset.Height = 0
-        InfoWindow.PixelOffset.Width = 0
-        InfoWindow.CloseOtherBeforeOpen = True
         Text = 'TRectangle'
         FillColor = clLime
         StrokeColor = clGreen
@@ -472,7 +403,6 @@ object MainFrm: TMainFrm
   object GMCircle1: TGMCircle
     Language = Espanol
     Map = GMMap1
-    AutoUpdate = True
     OnCloseClick = GMMarker1CloseClick
     OnHTMLContentChange = GMMarker1HTMLContentChange
     OnDisableAutoPanChange = GMMarker1DisableAutoPanChange
@@ -481,26 +411,14 @@ object MainFrm: TMainFrm
     OnCloseOtherBeforeOpenChange = GMMarker1CloseOtherBeforeOpenChange
     VisualObjects = <
       item
-        Tag = 0
         Center.Lat = 41.405426000000000000
         Center.Lng = 2.210090000000000000
-        Clickable = True
-        Editable = False
         FillOpacity = 0.200000000000000000
         StrokeOpacity = 0.200000000000000000
         StrokeWeight = 1
-        Visible = True
-        AutoResize.Active = False
         AutoResize.Min = 1000
         AutoResize.Max = 10000
-        AutoResize.Increment = 100
-        AutoResize.Circular = True
         AutoResize.Speed = 500
-        InfoWindow.DisableAutoPan = False
-        InfoWindow.MaxWidth = 0
-        InfoWindow.PixelOffset.Height = 0
-        InfoWindow.PixelOffset.Width = 0
-        InfoWindow.CloseOtherBeforeOpen = True
         Text = 'TCircle'
         FillColor = clAqua
         StrokeColor = clAqua
@@ -529,7 +447,6 @@ object MainFrm: TMainFrm
   object GMPolyline1: TGMPolyline
     Language = Espanol
     Map = GMMap1
-    AutoUpdate = True
     OnCloseClick = GMMarker1CloseClick
     OnHTMLContentChange = GMMarker1HTMLContentChange
     OnDisableAutoPanChange = GMMarker1DisableAutoPanChange
@@ -538,14 +455,7 @@ object MainFrm: TMainFrm
     OnCloseOtherBeforeOpenChange = GMMarker1CloseOtherBeforeOpenChange
     VisualObjects = <
       item
-        Tag = 0
-        Clickable = True
-        Editable = False
-        Geodesic = False
         StrokeOpacity = 1.000000000000000000
-        StrokeWeight = 2
-        Visible = True
-        AutoUpdatePath = True
         LinePoints = <
           item
             Lat = 41.380866000000000000
@@ -563,37 +473,19 @@ object MainFrm: TMainFrm
             Lat = 41.375875000000000000
             Lng = 2.177757000000000000
           end>
-        InfoWindow.DisableAutoPan = False
-        InfoWindow.MaxWidth = 0
-        InfoWindow.PixelOffset.Height = 0
-        InfoWindow.PixelOffset.Width = 0
-        InfoWindow.CloseOtherBeforeOpen = True
         Text = 'TPolyline'
-        StrokeColor = clBlack
         Icon.OffSet.Value = 10
-        Icon.OffSet.Measure = mPercentage
         Icon.DistRepeat.Value = 10
-        Icon.DistRepeat.Measure = mPercentage
+        Icon.DistRepeat.Measure = mPixels
         Icon.Icon.FillOpacity = 1.000000000000000000
         Icon.Icon.Path = spDASHEDLINE
         Icon.Icon.StrokeOpacity = 1.000000000000000000
         Icon.Icon.StrokeWeight = 2
-        Icon.Icon.FillColor = clRed
-        Icon.Icon.StrokeColor = clRed
-        CurveLine.Active = False
-        CurveLine.Horizontal = True
-        CurveLine.Multiplier = 1
         CurveLine.Resolution = 0.160000000000000000
       end
       item
-        Tag = 0
-        Clickable = True
-        Editable = False
-        Geodesic = False
         StrokeOpacity = 1.000000000000000000
-        StrokeWeight = 2
         Visible = False
-        AutoUpdatePath = True
         LinePoints = <
           item
             Lat = 41.340866000000000000
@@ -611,24 +503,11 @@ object MainFrm: TMainFrm
             Lat = 41.335875000000000000
             Lng = 2.177757000000000000
           end>
-        InfoWindow.DisableAutoPan = False
-        InfoWindow.MaxWidth = 0
-        InfoWindow.PixelOffset.Height = 0
-        InfoWindow.PixelOffset.Width = 0
-        InfoWindow.CloseOtherBeforeOpen = True
         Text = 'TPolyline'
-        StrokeColor = clBlack
-        Icon.OffSet.Value = 100
-        Icon.OffSet.Measure = mPercentage
         Icon.DistRepeat.Value = 0
         Icon.DistRepeat.Measure = mPixels
-        Icon.Icon.Path = spNONE
-        Icon.Icon.StrokeWeight = 0
         Icon.Icon.FillColor = clBlack
         Icon.Icon.StrokeColor = clBlack
-        CurveLine.Active = False
-        CurveLine.Horizontal = True
-        CurveLine.Multiplier = 1
         CurveLine.Resolution = 0.100000000000000000
       end>
     OnClick = GMMarker1Click
@@ -657,51 +536,28 @@ object MainFrm: TMainFrm
     Icon = 'http://www.cadetill.com/imagenes/gallery/gmlib/marker.png'
     Region = rSPAIN
     LangCode = lcSPANISH
-    PaintMarkerFound = False
     Left = 200
     Top = 40
   end
   object GMDirection1: TGMDirection
     Language = Espanol
     Map = GMMap1
-    AutoShow = True
-    HiddeOthers = True
-    DirectionsRequest.AvoidHighways = False
-    DirectionsRequest.AvoidTolls = False
     DirectionsRequest.Destination.Address = 'Tarragona'
-    DirectionsRequest.OptimizeWaypoints = False
     DirectionsRequest.Origin.Address = 'Barcelona'
-    DirectionsRequest.ProvideRouteAlt = True
     DirectionsRequest.Region = rSPAIN
     DirectionsRequest.TransitOpt.ArrivalTime = 0.000000011574074074
     DirectionsRequest.TransitOpt.ArrivalDate = 25569.000000000000000000
     DirectionsRequest.TransitOpt.DepartureTime = 0.000000011574074074
     DirectionsRequest.TransitOpt.DepartureDate = 25569.000000000000000000
-    DirectionsRequest.TravelMode = tmDRIVING
-    DirectionsRequest.UnitSystem = usMETRIC
     DirectionsRequest.WaypointsList = <>
     OnDirectionsChanged = GMDirection1DirectionsChanged
-    DirectionsRender.Draggable = False
-    DirectionsRender.MarkerOptions.Clickable = True
-    DirectionsRender.MarkerOptions.Draggable = False
-    DirectionsRender.MarkerOptions.Flat = True
-    DirectionsRender.PreserveViewport = False
-    DirectionsRender.SuppressBicyclingLayer = False
-    DirectionsRender.SuppressInfoWindows = False
-    DirectionsRender.SuppressMarkers = False
-    DirectionsRender.SuppressPolylines = False
-    DirectionsRender.PolylineOptions.Clickable = True
-    DirectionsRender.PolylineOptions.Geodesic = False
     DirectionsRender.PolylineOptions.StrokeOpacity = 0.500000000000000000
-    DirectionsRender.PolylineOptions.StrokeWeight = 2
-    DirectionsRender.PolylineOptions.StrokeColor = clBlue
     Left = 200
     Top = 88
   end
   object GMMarker1: TGMMarker
     Language = Espanol
     Map = GMMap1
-    AutoUpdate = True
     OnCloseClick = GMMarker1CloseClick
     OnHTMLContentChange = GMMarker1HTMLContentChange
     OnDisableAutoPanChange = GMMarker1DisableAutoPanChange
@@ -710,21 +566,12 @@ object MainFrm: TMainFrm
     OnCloseOtherBeforeOpenChange = GMMarker1CloseOtherBeforeOpenChange
     VisualObjects = <
       item
-        Tag = 0
         MarkerType = mtColored
-        Animation.OnDrop = False
-        Animation.Bounce = False
-        Clickable = True
         Draggable = True
-        Flat = False
         Position.Lat = 41.380866000000000000
         Position.Lng = 2.122579000000000000
         Title = 'Camp Nou'
-        Visible = True
-        Optimized = True
-        RaiseOnDrag = True
         Icon = 'http://www.cadetill.com/imagenes/gallery/gmlib/marker.png'
-        CrossOnDrag = True
         InfoWindow.HTMLContent = 
           '<h1>Camp Nou</h1>'#13#10'<p>El <b>Camp Nou</b> (nombre que en catal'#225'n ' +
           'significa "Campo Nuevo", pronunciado [kam '#39'now]), a menudo tambi' +
@@ -743,38 +590,17 @@ object MainFrm: TMainFrm
           'que es la denominaci'#243'n con la que popularmente siempre ha sido c' +
           'onocido.</p>'
         InfoWindow.DisableAutoPan = True
-        InfoWindow.MaxWidth = 0
         InfoWindow.PixelOffset.Height = 10
         InfoWindow.PixelOffset.Width = 10
-        InfoWindow.CloseOtherBeforeOpen = True
         ShowInfoWinMouseOver = True
-        ColoredMarker.Width = 32
-        ColoredMarker.Height = 32
-        ColoredMarker.PrimaryColor = clRed
-        ColoredMarker.StrokeColor = clBlack
-        ColoredMarker.CornerColor = clWhite
-        StyledMarker.StyledIcon = siMarker
-        StyledMarker.ShowStar = False
-        StyledMarker.BackgroundColor = clRed
-        StyledMarker.TextColor = clBlack
-        StyledMarker.StarColor = clLime
       end
       item
-        Tag = 0
         MarkerType = mtStyledMarker
-        Animation.OnDrop = False
-        Animation.Bounce = False
-        Clickable = True
         Draggable = True
-        Flat = False
         Position.Lat = 41.403185000000000000
         Position.Lng = 2.173725000000000000
         Title = 'Bas'#237'lica de la Sagrada Familia'
-        Visible = True
-        Optimized = True
-        RaiseOnDrag = True
         Icon = 'http://www.cadetill.com/imagenes/gallery/gmlib/marker.png'
-        CrossOnDrag = True
         InfoWindow.HTMLContent = 
           '<h1>Templo Expiatorio de la Sagrada Familia</h1>'#13#10'<p><b>El Templ' +
           'o Expiatorio de la Sagrada Familia</b> (en catal'#225'n <i>Temple Exp' +
@@ -792,38 +618,15 @@ object MainFrm: TMainFrm
           ' Se hizo cargo con s'#243'lo 31 a'#241'os, dedic'#225'ndole el resto de su vida' +
           ', los '#250'ltimos quince en exclusiva.</p>'
         InfoWindow.DisableAutoPan = True
-        InfoWindow.MaxWidth = 0
-        InfoWindow.PixelOffset.Height = 0
-        InfoWindow.PixelOffset.Width = 0
-        InfoWindow.CloseOtherBeforeOpen = True
-        ShowInfoWinMouseOver = False
-        ColoredMarker.Width = 32
-        ColoredMarker.Height = 32
-        ColoredMarker.PrimaryColor = clRed
-        ColoredMarker.StrokeColor = clBlack
-        ColoredMarker.CornerColor = clWhite
-        StyledMarker.StyledIcon = siMarker
         StyledMarker.ShowStar = True
-        StyledMarker.BackgroundColor = clRed
-        StyledMarker.TextColor = clBlack
-        StyledMarker.StarColor = clLime
       end
       item
-        Tag = 0
         MarkerType = mtStyledMarker
-        Animation.OnDrop = False
-        Animation.Bounce = False
-        Clickable = True
         Draggable = True
-        Flat = False
         Position.Lat = 41.414282000000000000
         Position.Lng = 2.151847000000000000
         Title = 'Parc G'#252'ell'
-        Visible = True
-        Optimized = True
-        RaiseOnDrag = True
         Icon = 'http://www.cadetill.com/imagenes/gallery/gmlib/marker.png'
-        CrossOnDrag = True
         InfoWindow.HTMLContent = 
           '<h1>Parque G'#252'ell</h1>'#13#10'<p>El <b>Parque G'#252'ell</b> (<i>Parc G'#252'ell<' +
           '/i> en catal'#225'n y <i>Park G'#252'ell</i> en su denominaci'#243'n original) ' +
@@ -839,38 +642,15 @@ object MainFrm: TMainFrm
           'uy'#243' al Parque G'#252'ell dentro del Lugar Patrimonio de la Humanidad ' +
           #171'Obras de Antoni Gaud'#237#187'.</p>'
         InfoWindow.DisableAutoPan = True
-        InfoWindow.MaxWidth = 0
-        InfoWindow.PixelOffset.Height = 0
-        InfoWindow.PixelOffset.Width = 0
-        InfoWindow.CloseOtherBeforeOpen = True
-        ShowInfoWinMouseOver = False
-        ColoredMarker.Width = 32
-        ColoredMarker.Height = 32
-        ColoredMarker.PrimaryColor = clRed
-        ColoredMarker.StrokeColor = clBlack
-        ColoredMarker.CornerColor = clWhite
         StyledMarker.StyledIcon = siBubble
-        StyledMarker.ShowStar = False
-        StyledMarker.BackgroundColor = clRed
         StyledMarker.TextColor = clBlue
-        StyledMarker.StarColor = clLime
       end
       item
-        Tag = 0
-        MarkerType = mtStandard
-        Animation.OnDrop = False
-        Animation.Bounce = False
-        Clickable = True
         Draggable = True
-        Flat = False
         Position.Lat = 41.375875000000000000
         Position.Lng = 2.177757000000000000
         Title = 'Estatua de Col'#243'n'
-        Visible = True
-        Optimized = True
-        RaiseOnDrag = True
         Icon = 'http://www.cadetill.com/imagenes/gallery/gmlib/marker.png'
-        CrossOnDrag = True
         InfoWindow.HTMLContent = 
           '<h1>Monumento a Col'#243'n (Barcelona)</h1>'#13#10'<p>El <b>Monumento a Col' +
           #243'n</b> es una de las m'#225's famosas estatuas de la ciudad de Barcel' +
@@ -887,53 +667,11 @@ object MainFrm: TMainFrm
           'situada bajo los pies de la estatua, desde donde se divisa la ci' +
           'udad.</p>'
         InfoWindow.DisableAutoPan = True
-        InfoWindow.MaxWidth = 0
-        InfoWindow.PixelOffset.Height = 0
-        InfoWindow.PixelOffset.Width = 0
-        InfoWindow.CloseOtherBeforeOpen = True
-        ShowInfoWinMouseOver = False
-        ColoredMarker.Width = 32
-        ColoredMarker.Height = 32
-        ColoredMarker.PrimaryColor = clRed
-        ColoredMarker.StrokeColor = clBlack
-        ColoredMarker.CornerColor = clWhite
-        StyledMarker.StyledIcon = siMarker
-        StyledMarker.ShowStar = False
-        StyledMarker.BackgroundColor = clRed
-        StyledMarker.TextColor = clBlack
-        StyledMarker.StarColor = clLime
       end
       item
-        Tag = 0
-        MarkerType = mtStandard
-        Animation.OnDrop = False
-        Animation.Bounce = False
-        Clickable = True
-        Draggable = False
-        Flat = False
         Position.Lat = 41.365875000000000000
         Position.Lng = 2.167757000000000000
         Title = 'TMarker'
-        Visible = True
-        Optimized = True
-        RaiseOnDrag = True
-        CrossOnDrag = True
-        InfoWindow.DisableAutoPan = False
-        InfoWindow.MaxWidth = 0
-        InfoWindow.PixelOffset.Height = 0
-        InfoWindow.PixelOffset.Width = 0
-        InfoWindow.CloseOtherBeforeOpen = True
-        ShowInfoWinMouseOver = False
-        ColoredMarker.Width = 32
-        ColoredMarker.Height = 32
-        ColoredMarker.PrimaryColor = clRed
-        ColoredMarker.StrokeColor = clBlack
-        ColoredMarker.CornerColor = clWhite
-        StyledMarker.StyledIcon = siMarker
-        StyledMarker.ShowStar = False
-        StyledMarker.BackgroundColor = clRed
-        StyledMarker.TextColor = clBlack
-        StyledMarker.StarColor = clLime
       end>
     OnClick = GMMarker1Click
     OnDblClick = GMMarker1DblClick
@@ -959,15 +697,12 @@ object MainFrm: TMainFrm
     Language = Espanol
     Map = GMMap1
     LinePoints = <>
-    Samples = 2
-    ElevationType = etForLocations
     Left = 200
     Top = 144
   end
   object GMGroundOverlay1: TGMGroundOverlay
     Language = Espanol
     Map = GMMap1
-    AutoUpdate = True
     OnCloseClick = GMMarker1CloseClick
     OnHTMLContentChange = GMMarker1HTMLContentChange
     OnDisableAutoPanChange = GMMarker1DisableAutoPanChange
@@ -976,7 +711,6 @@ object MainFrm: TMainFrm
     OnCloseOtherBeforeOpenChange = GMMarker1CloseOtherBeforeOpenChange
     VisualObjects = <
       item
-        Tag = 0
         Bounds.SW.Lat = 41.313817870000000000
         Bounds.SW.Lng = 2.007959370000000000
         Bounds.NE.Lat = 41.417399720000000000
@@ -988,11 +722,6 @@ object MainFrm: TMainFrm
           'D:\Docs\Dropbox\Programacio\GoogleMaps\Components\Images\mapa.pn' +
           'g'
         InfoWindow.HTMLContent = 'ngf jy yu uyg kugkug'
-        InfoWindow.DisableAutoPan = False
-        InfoWindow.MaxWidth = 0
-        InfoWindow.PixelOffset.Height = 0
-        InfoWindow.PixelOffset.Width = 0
-        InfoWindow.CloseOtherBeforeOpen = True
         Text = 'TGroundOverlay'
       end>
     OnClick = GMMarker1Click
@@ -1014,12 +743,9 @@ object MainFrm: TMainFrm
   object GMHeatmap1: TGMHeatmap
     Language = Espanol
     Map = GMMap1
-    Show = False
     Data = <>
-    Dissipating = False
     Opacity = 0.600000000000000000
     Radius = 0
-    Gradient = grHot
     Left = 200
     Top = 192
   end

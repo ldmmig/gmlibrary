@@ -396,3 +396,58 @@ RadStudio XE7 Installation
      Browse to the "src" folder and press "OK", "Add"
      Browse to the "src\VCL" folder and press "OK", "Add"
      Browse to the "src\FMX" folder and press "OK", "Add", "OK"
+
+
+RadStudio XE8 Installation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1. Open the project "GMLibProject_DXE8.groupproj"
+2. Select package (doble click) "GMLib_DXE8.bpl"
+     Select target platform "32-bit Windows"
+     Right click on "GMLib_DXE8.bpl" and click "Compile" and "Install"
+     Select target platform "64-bit Windows"
+     Right click on "GMLib_DXE8.bpl" and click "Compile"
+3. Select package (doble click) "GMLib_DXE8_VCL.bpl"
+     Select target platform "32-bit Windows"
+     Right click on "GMLib_DXE8_VCL.bpl" and click "Compile" and "Install"
+     Select target platform "64-bit Windows"
+     Right click on "GMLib_DXE8_VCL.bpl" and click "Compile"
+4. Select package (doble click) "GMLib_DXE8_FMX.bpl"
+     Select target platform "32-bit Windows"
+     Right click on "GMLib_DXE8_FMX.bpl" and click "Compile" and "Install"
+     Select target platform "64-bit Windows"
+     Right click on "GMLib_DXE8_FMX.bpl" and click "Compile"
+5. Right click on "GMLibEdit_DXE8.bpl" and click "Compile" and "Install"
+6. Go to "Tools > Options > Environment Options > Delphi Options > Library"
+   Select "32-bit Windows" platform
+     Click "Library Path > [...]" button
+     Browse to the "lib\DXE8" folder and press "OK", "Add"
+     Browse to the "lib\DXE8\VCL" folder and press "OK", "Add"
+     Browse to the "lib\DXE8\FMX" folder and press "OK", "Add"
+     Browse to the "src" folder and press "OK", "Add"
+     Browse to the "src\VCL" folder and press "OK", "Add"
+     Browse to the "src\FMX" folder and press "OK", "Add", "OK"
+   Select "64-bit Windows" platform
+     Click "Library Path > [...]" button
+     Browse to the "lib\DXE8_64" folder and press "OK", "Add"
+     Browse to the "lib\DXE8_64\VCL" folder and press "OK", "Add"
+     Browse to the "lib\DXE8_64\FMX" folder and press "OK", "Add"
+     Browse to the "src" folder and press "OK", "Add"
+     Browse to the "src\VCL" folder and press "OK", "Add"
+     Browse to the "src\FMX" folder and press "OK", "Add", "OK"
+7. Go to "Tools > Options > Environment Options > C++ Options > Path and Directories"
+   Select "32-bit Windows" platform
+     Click "Library Path > [...]" button
+     Browse to the "lib\CXE8" folder and press "OK", "Add"
+     Browse to the "lib\CXE8\VCL" folder and press "OK", "Add"
+     Browse to the "lib\CXE8\FMX" folder and press "OK", "Add"
+     Browse to the "src" folder and press "OK", "Add"
+     Browse to the "src\VCL" folder and press "OK", "Add"
+     Browse to the "src\FMX" folder and press "OK", "Add", "OK"
+   Select "64-bit Windows" platform
+     Click "Library Path > [...]" button
+     Browse to the "lib\CXE8_64" folder and press "OK", "Add"
+     Browse to the "lib\CXE8_64\VCL" folder and press "OK", "Add"
+     Browse to the "lib\CXE8_64\FMX" folder and press "OK", "Add"
+     Browse to the "src" folder and press "OK", "Add"
+     Browse to the "src\VCL" folder and press "OK", "Add"
+     Browse to the "src\FMX" folder and press "OK", "Add", "OK"

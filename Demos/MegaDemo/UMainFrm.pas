@@ -314,6 +314,7 @@ begin
   Tmp := ExtractFilePath(ParamStr(0));
   GMHeatmap1.LoadFromCSV(0, 1, Tmp + 'heapmap.csv', ';', True, True);
 
+  // control for old versions of IE and TGMHeapMap component
   ControlIEVersion;
 end;
 

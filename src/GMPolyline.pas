@@ -136,13 +136,13 @@ Copyright (©) 2012, by Xavier Martinez (cadetill)
   The GMPolyline unit includes the base classes needed to show polylines and polygons on Google Map map using the component TGMMap.
 
   @author Xavier Martinez (cadetill)
-  @version 1.5.0
+  @version 1.5.2
 -------------------------------------------------------------------------------}
 {=------------------------------------------------------------------------------
   La unit GMPolyline contiene las clases bases necesarias para mostrar polilineas y polígonos en un mapa de Google Maps mediante el componente TGMMap.
 
   @author Xavier Martinez (cadetill)
-  @version 1.5.0
+  @version 1.5.2
 -------------------------------------------------------------------------------}
 unit GMPolyline;
 
@@ -250,9 +250,9 @@ type
     procedure Assign(Source: TPersistent); override;
   published
     property FillOpacity: Real read FFillOpacity write SetFillOpacity; // 0 to 1
-    property Path: TSymbolPath read FPath write SetPath;
+    property Path: TSymbolPath read FPath write SetPath default spNONE;
     property StrokeOpacity: Real read FStrokeOpacity write SetStrokeOpacity; // 0 to 1
-    property StrokeWeight: Integer read FStrokeWeight write SetStrokeWeight; // 1 to 10
+    property StrokeWeight: Integer read FStrokeWeight write SetStrokeWeight default 0; // 1 to 10
   end;
 
   {*------------------------------------------------------------------------------
@@ -307,8 +307,8 @@ type
     -------------------------------------------------------------------------------}
     procedure Assign(Source: TPersistent); override;
   published
-    property Value: Integer read FValue write SetValue;
-    property Measure: TMeasure read FMeasure write SetMeasure;
+    property Value: Integer read FValue write SetValue default 100;
+    property Measure: TMeasure read FMeasure write SetMeasure default mPercentage;
   end;
 
   {*------------------------------------------------------------------------------
@@ -471,9 +471,9 @@ type
 
     property OnChange: TNotifyEvent read FOnChange write FOnChange;
   published
-    property Active: Boolean read FActive write SetActive;
-    property Horizontal: Boolean read FHorizontal write SetHorizontal;
-    property Multiplier: Integer read FMultiplier write SetMultiplier;
+    property Active: Boolean read FActive write SetActive default False;
+    property Horizontal: Boolean read FHorizontal write SetHorizontal default True;
+    property Multiplier: Integer read FMultiplier write SetMultiplier default 1;
     property Resolution: Real read FResolution write SetResolution;
   end;
 
@@ -811,13 +811,13 @@ type
     -------------------------------------------------------------------------------}
     property Items[I: Integer]: TLinePoint read GetItems; default;
   published
-    property Clickable: Boolean read FClickable write SetClickable;
-    property Editable: Boolean read FEditable write SetEditable;
-    property Geodesic: Boolean read FGeodesic write SetGeodesic;
+    property Clickable: Boolean read FClickable write SetClickable default True;
+    property Editable: Boolean read FEditable write SetEditable default False;
+    property Geodesic: Boolean read FGeodesic write SetGeodesic default False;
     property StrokeOpacity: Real read FStrokeOpacity write SetStrokeOpacity; // 0 to 1
-    property StrokeWeight: Integer read FStrokeWeight write SetStrokeWeight; // 1 to 10
-    property Visible: Boolean read FVisible write SetVisible;
-    property AutoUpdatePath: Boolean read FAutoUpdatePath write FAutoUpdatePath;
+    property StrokeWeight: Integer read FStrokeWeight write SetStrokeWeight default 2; // 1 to 10
+    property Visible: Boolean read FVisible write SetVisible default True;
+    property AutoUpdatePath: Boolean read FAutoUpdatePath write FAutoUpdatePath default True;
     // ES/EN: TCollection
     property LinePoints: TLinePoints read FLinePoints write FLinePoints;
     {*------------------------------------------------------------------------------

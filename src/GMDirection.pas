@@ -94,13 +94,13 @@ Copyright (©) 2012, by Xavier Martinez (cadetill)
   Includes the necessary base classes to manage routes and show it into a Google Maps map.
 
   @author Xavier Martinez (cadetill)
-  @version 1.5.0
+  @version 1.5.2
 -------------------------------------------------------------------------------}
 {=------------------------------------------------------------------------------
   Contiene las classes bases necesarias para la manipulación de rutas y mostrarlas en un mapa de Google Maps.
 
   @author Xavier Martinez (cadetill)
-  @version 1.5.0
+  @version 1.5.2
 -------------------------------------------------------------------------------}
 unit GMDirection;
 
@@ -1381,7 +1381,7 @@ type
     procedure Assign(Source: TPersistent); override;
   published
     property Location: TLatLngStr read FLocation write FLocation;
-    property StopOver: Boolean read FStopOver write FStopOver;
+    property StopOver: Boolean read FStopOver write FStopOver default False;
     property Title: string read FTitle write SetTitle;
   end;
 
@@ -1621,16 +1621,16 @@ type
     -------------------------------------------------------------------------------}
     property Waypoints[I: Integer]: TWaypoint read GetWaypoint; default;
   published
-    property AvoidHighways: Boolean read FAvoidHighways write FAvoidHighways;
-    property AvoidTolls: Boolean read FAvoidTolls write FAvoidTolls;
+    property AvoidHighways: Boolean read FAvoidHighways write FAvoidHighways default False;
+    property AvoidTolls: Boolean read FAvoidTolls write FAvoidTolls default False;
     property Destination: TLatLngStr read FDestination write FDestination;
-    property OptimizeWaypoints: Boolean read FOptimizeWaypoints write FOptimizeWaypoints;
+    property OptimizeWaypoints: Boolean read FOptimizeWaypoints write FOptimizeWaypoints default False;
     property Origin: TLatLngStr read FOrigin write FOrigin;
-    property ProvideRouteAlt: Boolean read FProvideRouteAlt write FProvideRouteAlt;
-    property Region: TRegion read FRegion write FRegion;
+    property ProvideRouteAlt: Boolean read FProvideRouteAlt write FProvideRouteAlt default True;
+    property Region: TRegion read FRegion write FRegion default r_NO_REGION;
     property TransitOpt: TTransitOptions read FTransitOpt write FTransitOpt;
-    property TravelMode: TTravelMode read FTravelMode write FTravelMode;
-    property UnitSystem: TUnitSystem read FUnitSystem write FUnitSystem;
+    property TravelMode: TTravelMode read FTravelMode write FTravelMode default tmDRIVING;
+    property UnitSystem: TUnitSystem read FUnitSystem write FUnitSystem default usMETRIC;
     property WaypointsList: TWaypointsList read FWaypointsList write SetWaypointsList;
   end;
 
@@ -1706,9 +1706,9 @@ type
     -------------------------------------------------------------------------------}
     procedure Assign(Source: TPersistent); override;
   published
-    property Clickable: Boolean read FClickable write SetClickable;
-    property Draggable: Boolean read FDraggable write SetDraggable;
-    property Flat: Boolean read FFlat write SetFlat;
+    property Clickable: Boolean read FClickable write SetClickable default True;
+    property Draggable: Boolean read FDraggable write SetDraggable default False;
+    property Flat: Boolean read FFlat write SetFlat default True;
     property Icon: string read FIcon write SetIcon;
   end;
 
@@ -1794,10 +1794,10 @@ type
     -------------------------------------------------------------------------------}
     procedure Assign(Source: TPersistent); override;
   published
-    property Clickable: Boolean read FClickable write SetClickable;
-    property Geodesic: Boolean read FGeodesic write SetGeodesic;
+    property Clickable: Boolean read FClickable write SetClickable default True;
+    property Geodesic: Boolean read FGeodesic write SetGeodesic default False;
     property StrokeOpacity: Real read FStrokeOpacity write SetStrokeOpacity; // 0 to 1
-    property StrokeWeight: Integer read FStrokeWeight write SetStrokeWeight; // 1 to 10
+    property StrokeWeight: Integer read FStrokeWeight write SetStrokeWeight default 2; // 1 to 10
   end;
 
   {*------------------------------------------------------------------------------
@@ -1938,13 +1938,13 @@ type
     -------------------------------------------------------------------------------}
     procedure Assign(Source: TPersistent); override;
   published
-    property Draggable: Boolean read FDraggable write SetDraggable;
+    property Draggable: Boolean read FDraggable write SetDraggable default False;
     property MarkerOptions: TMarkerOptions read FMarkerOptions write FMarkerOptions;
-    property PreserveViewport: Boolean read FPreserveViewport write SetPreserveViewport;
-    property SuppressBicyclingLayer: Boolean read FSuppressBicyclingLayer write SetSuppressBicyclingLayer;
-    property SuppressInfoWindows: Boolean read FSuppressInfoWindows write SetSuppressInfoWindows;
-    property SuppressMarkers: Boolean read FSuppressMarkers write SetSuppressMarkers;
-    property SuppressPolylines: Boolean read FSuppressPolylines write SetSuppressPolylines;
+    property PreserveViewport: Boolean read FPreserveViewport write SetPreserveViewport default False;
+    property SuppressBicyclingLayer: Boolean read FSuppressBicyclingLayer write SetSuppressBicyclingLayer default False;
+    property SuppressInfoWindows: Boolean read FSuppressInfoWindows write SetSuppressInfoWindows default False;
+    property SuppressMarkers: Boolean read FSuppressMarkers write SetSuppressMarkers default False;
+    property SuppressPolylines: Boolean read FSuppressPolylines write SetSuppressPolylines default False;
   end;
 
   {*------------------------------------------------------------------------------
@@ -2132,8 +2132,8 @@ type
     -------------------------------------------------------------------------------}
     property DirectionsResult[I: Integer]: TCustomDirectionsResult read GetDirectionResult; default;
   published
-    property AutoShow: Boolean read FAutoShow write FAutoShow;
-    property HiddeOthers: Boolean read FHiddeOthers write FHiddeOthers;
+    property AutoShow: Boolean read FAutoShow write FAutoShow default True;
+    property HiddeOthers: Boolean read FHiddeOthers write FHiddeOthers default True;
     property DirectionsRequest: TDirectionsRequest read FDirectionsRequest write FDirectionsRequest;
     property OnDirectionsChanged: TNotifyEvent read FOnDirectionsChanged write FOnDirectionsChanged;
   end;

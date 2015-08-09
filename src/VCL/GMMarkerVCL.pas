@@ -126,9 +126,9 @@ type
 
     procedure Assign(Source: TPersistent); override;
   published
-    property PrimaryColor: TColor read FPrimaryColor write SetPrimaryColor;
-    property StrokeColor: TColor read FStrokeColor write SetStrokeColor;
-    property CornerColor: TColor read FCornerColor write SetCornerColor;
+    property PrimaryColor: TColor read FPrimaryColor write SetPrimaryColor default clRed;
+    property StrokeColor: TColor read FStrokeColor write SetStrokeColor default clBlack;
+    property CornerColor: TColor read FCornerColor write SetCornerColor default clWhite;
   end;
 
   {*------------------------------------------------------------------------------
@@ -182,9 +182,9 @@ type
 
     procedure Assign(Source: TPersistent); override;
   published
-    property BackgroundColor: TColor read FBackgroundColor write SetBackgroundColor;
-    property TextColor: TColor read FTextColor write SetTextColor;
-    property StarColor: TColor read FStarColor write SetStarColor;
+    property BackgroundColor: TColor read FBackgroundColor write SetBackgroundColor default clRed;
+    property TextColor: TColor read FTextColor write SetTextColor default clBlack;
+    property StarColor: TColor read FStarColor write SetStarColor default clLime;
   end;
 
   {*------------------------------------------------------------------------------

@@ -14,6 +14,12 @@ MODO DE USO/HOW TO USE
 =========================================================================
 History:
 
+ver 1.5.2
+  ES:
+    error: TGMGeoCode -> TGeoResult.Geometry.LocationType siempre devolvía gltNothing (GC: issue 46)
+  EN:
+    bug: TGMGeoCode -> TGeoResult.Geometry.LocationType is always gltNothing (GC: issue 46)
+
 ver 1.2.0
   ES:
     error: TAddressComponentsList -> corregido Memory leak en el método Destroy (gracias Mike) (GC: issue 13).
@@ -124,13 +130,13 @@ Copyright (©) 2012, by Xavier Martinez (cadetill)
   Includes the necessary classes to geocoding.
 
   @author Xavier Martinez (cadetill)
-  @version 1.5.0
+  @version 1.5.2
 -------------------------------------------------------------------------------}
 {=------------------------------------------------------------------------------
   Contiene las classes necesarias para la geocodificación.
 
   @author Xavier Martinez (cadetill)
-  @version 1.5.0
+  @version 1.5.2
 -------------------------------------------------------------------------------}
 unit GMGeoCode;
 
@@ -634,9 +640,9 @@ type
     property Marker: TCustomGMMarker read FMarker write FMarker;
     property Icon: string read FIcon write FIcon;
     property Bounds: TLatLngBounds read FBounds write FBounds;
-    property Region: TRegion read FRegion write FRegion;
-    property LangCode: TLangCode read FLangCode write FLangCode;
-    property PaintMarkerFound: Boolean read FPaintMarkerFound write FPaintMarkerFound;
+    property Region: TRegion read FRegion write FRegion default r_NO_REGION;
+    property LangCode: TLangCode read FLangCode write FLangCode default lcENGLISH;
+    property PaintMarkerFound: Boolean read FPaintMarkerFound write FPaintMarkerFound default False;
     // eventos
     // events
     property AfterGetData: TNotifyEvent read FAfterGetData write FAfterGetData;
@@ -958,8 +964,8 @@ end;
 function TGMGeoCode.StrToGeocoderLocationType(
   GeocoderLocationType: string): TGeocoderLocationType;
 begin
-  case AnsiIndexStr(UpperCase(GeocoderLocationType), ['APPROXIMATE', 'GEOMETRIC_CENTER',
-                                    'RANGE_INTERPOLATED', 'ROOFTOP', 'NOTHING']) of
+  case AnsiIndexStr(UpperCase(GeocoderLocationType), ['GLTAPPROXIMATE', 'GLTGEOMETRIC_CENTER',
+                                    'GLTRANGE_INTERPOLATED', 'GLTROOFTOP', 'GLTNOTHING']) of
     0: Result := gltAPPROXIMATE;
     1: Result := gltGEOMETRIC_CENTER;
     2: Result := gltRANGE_INTERPOLATED;

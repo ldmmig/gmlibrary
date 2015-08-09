@@ -190,13 +190,13 @@ web  http://www.cadetill.com
   The GMMap unit includes the base classes that manages the map and the objects in it are represented.
 
   @author Xavier Martinez (cadetill)
-  @version 1.5.0
+  @version 1.5.2
 -------------------------------------------------------------------------------}
 {=------------------------------------------------------------------------------
   La unit GMMap incluye las clases bases que gestionan el mapa y los objetos que en él se representan.
 
   @author Xavier Martinez (cadetill)
-  @version 1.5.0
+  @version 1.5.2
 -------------------------------------------------------------------------------}
 unit GMMap;
 
@@ -502,28 +502,28 @@ type
     {=------------------------------------------------------------------------------
       Conjunto de todos los MapTypeId.
     -------------------------------------------------------------------------------}
-    property MapTypeIds: TMapTypeIds read FMapTypeIds write FMapTypeIds default [mtHYBRID, mtROADMAP, mtSATELLITE, mtTERRAIN]; // mapTypeIds
+    property MapTypeIds: TMapTypeIds read FMapTypeIds write FMapTypeIds default [mtHYBRID, mtROADMAP, mtSATELLITE, mtTERRAIN, mtOSM]; // mapTypeIds
     {*------------------------------------------------------------------------------
       Control position in the map.
     -------------------------------------------------------------------------------}
     {=------------------------------------------------------------------------------
       Posición del control dentro del mapa.
     -------------------------------------------------------------------------------}
-    property Position: TControlPosition read FPosition write FPosition;   // position
+    property Position: TControlPosition read FPosition write FPosition default cpTOP_RIGHT;   // position
     {*------------------------------------------------------------------------------
       Control style.
     -------------------------------------------------------------------------------}
     {=------------------------------------------------------------------------------
       Estilo del control.
     -------------------------------------------------------------------------------}
-    property Style: TMapTypeControlStyle read FStyle write FStyle; // style
+    property Style: TMapTypeControlStyle read FStyle write FStyle default mtcDEFAULT; // style
     {*------------------------------------------------------------------------------
       Show the control. To true, the control is shown, to false is hidden
     -------------------------------------------------------------------------------}
     {=------------------------------------------------------------------------------
       Muestra el control. A true, el control se muestra, a false se oculta
     -------------------------------------------------------------------------------}
-    property Show: Boolean read FShow write FShow;
+    property Show: Boolean read FShow write FShow default true;
   end;
 
   {*------------------------------------------------------------------------------
@@ -563,14 +563,14 @@ type
     {=------------------------------------------------------------------------------
       Estado del control, cerrado o abierto
     -------------------------------------------------------------------------------}
-    property Opened: Boolean read FOpened write FOpened;  // opened
+    property Opened: Boolean read FOpened write FOpened default True;  // opened
     {*------------------------------------------------------------------------------
       Show the control. To true, the control is shown, to false is hidden
     -------------------------------------------------------------------------------}
     {=------------------------------------------------------------------------------
       Muestra el control. A true, el control se muestra, a false se oculta
     -------------------------------------------------------------------------------}
-    property Show: Boolean read FShow write FShow;
+    property Show: Boolean read FShow write FShow default True;
   end;
 
   {*------------------------------------------------------------------------------
@@ -610,14 +610,14 @@ type
     {=------------------------------------------------------------------------------
       Posición del control dentro del mapa
     -------------------------------------------------------------------------------}
-    property Position: TControlPosition read FPosition write FPosition;   // position
+    property Position: TControlPosition read FPosition write FPosition default cpTOP_LEFT;   // position
     {*------------------------------------------------------------------------------
       Show the control. To true, the control is shown, to false is hidden
     -------------------------------------------------------------------------------}
     {=------------------------------------------------------------------------------
       Muestra el control. A true, el control se muestra, a false se oculta
     -------------------------------------------------------------------------------}
-    property Show: Boolean read FShow write FShow;
+    property Show: Boolean read FShow write FShow default True;
   end;
 
   {*------------------------------------------------------------------------------
@@ -657,14 +657,14 @@ type
     {=------------------------------------------------------------------------------
       Posición del control dentro del mapa
     -------------------------------------------------------------------------------}
-    property Position: TControlPosition read FPosition write FPosition;   // position
+    property Position: TControlPosition read FPosition write FPosition default cpTOP_LEFT;   // position
     {*------------------------------------------------------------------------------
       Show the control. To true, the control is shown, to false is hidden
     -------------------------------------------------------------------------------}
     {=------------------------------------------------------------------------------
       Muestra el control. A true, el control se muestra, a false se oculta
     -------------------------------------------------------------------------------}
-    property Show: Boolean read FShow write FShow;
+    property Show: Boolean read FShow write FShow default True;
   end;
 
   {*------------------------------------------------------------------------------
@@ -705,21 +705,21 @@ type
     {=------------------------------------------------------------------------------
       Posición del control dentro del mapa
     -------------------------------------------------------------------------------}
-    property Position: TControlPosition read FPosition write FPosition;   // position
+    property Position: TControlPosition read FPosition write FPosition default cpBOTTOM_LEFT;   // position
     {*------------------------------------------------------------------------------
       Control style.
     -------------------------------------------------------------------------------}
     {=------------------------------------------------------------------------------
       Estilo del control
     -------------------------------------------------------------------------------}
-    property Style: TScaleControlStyle read FStyle write FStyle;  // style
+    property Style: TScaleControlStyle read FStyle write FStyle default scDEFAULT;  // style
     {*------------------------------------------------------------------------------
       Show the control. To true, the control is shown, to false is hidden
     -------------------------------------------------------------------------------}
     {=------------------------------------------------------------------------------
       Muestra el control. A true, el control se muestra, a false se oculta
     -------------------------------------------------------------------------------}
-    property Show: Boolean read FShow write FShow;
+    property Show: Boolean read FShow write FShow default True;
   end;
 
   {*------------------------------------------------------------------------------
@@ -759,14 +759,14 @@ type
     {=------------------------------------------------------------------------------
       Posición del control dentro del mapa
     -------------------------------------------------------------------------------}
-    property Position: TControlPosition read FPosition write FPosition;   // position
+    property Position: TControlPosition read FPosition write FPosition default cpTOP_LEFT;   // position
     {*------------------------------------------------------------------------------
       Show the control. To true, the control is shown, to false is hidden
     -------------------------------------------------------------------------------}
     {=------------------------------------------------------------------------------
       Muestra el control. A true, el control se muestra, a false se oculta
     -------------------------------------------------------------------------------}
-    property Show: Boolean read FShow write FShow;
+    property Show: Boolean read FShow write FShow default True;
   end;
 
   {*------------------------------------------------------------------------------
@@ -807,21 +807,21 @@ type
     {=------------------------------------------------------------------------------
       Posición del control dentro del mapa
     -------------------------------------------------------------------------------}
-    property Position: TControlPosition read FPosition write FPosition;   // position
+    property Position: TControlPosition read FPosition write FPosition default cpTOP_LEFT;   // position
     {*------------------------------------------------------------------------------
       Control style.
     -------------------------------------------------------------------------------}
     {=------------------------------------------------------------------------------
       Estilo del control
     -------------------------------------------------------------------------------}
-    property Style: TZoomControlStyle read FStyle write FStyle;  // style
+    property Style: TZoomControlStyle read FStyle write FStyle default zcDEFAULT;  // style
     {*------------------------------------------------------------------------------
       Show the control. To true, the control is shown, to false is hidden
     -------------------------------------------------------------------------------}
     {=------------------------------------------------------------------------------
       Muestra el control. A true, el control se muestra, a false se oculta
     -------------------------------------------------------------------------------}
-    property Show: Boolean read FShow write FShow;
+    property Show: Boolean read FShow write FShow default True;
   end;
 
   {*------------------------------------------------------------------------------
@@ -991,14 +991,14 @@ type
     {=------------------------------------------------------------------------------
       Indica la vista del mapa.
     -------------------------------------------------------------------------------}
-    property MapType: TMapTypeId read FMapType write SetMapType;
+    property MapType: TMapTypeId read FMapType write SetMapType default mtROADMAP;
     {*------------------------------------------------------------------------------
       Indicates zoom with to be displayed the map. Values between 0 and 15.
     -------------------------------------------------------------------------------}
     {=------------------------------------------------------------------------------
       Indica el zoom con el que se mostrará el mapa. Valores entre 0 y 15.
     -------------------------------------------------------------------------------}
-    property Zoom: Integer read FZoom write SetZoom;
+    property Zoom: Integer read FZoom write SetZoom default 8;
   end;
 
   {*------------------------------------------------------------------------------
@@ -1061,21 +1061,21 @@ type
     {=------------------------------------------------------------------------------
       Nivel de zoom máximo que será mostrado en el mapa.
     -------------------------------------------------------------------------------}
-    property MaxZoom: Integer read FMaxZoom write SetMaxZoom;   // maxZoom, 0 = null
+    property MaxZoom: Integer read FMaxZoom write SetMaxZoom default 0;   // maxZoom, 0 = null
     {*------------------------------------------------------------------------------
       The minimum zoom level which will be displayed on the map.
     -------------------------------------------------------------------------------}
     {=------------------------------------------------------------------------------
       Nivel de zoom mínimo que será mostrado en el mapa.
     -------------------------------------------------------------------------------}
-    property MinZoom: Integer read FMinZoom write SetMinZoom;   // minZoom, 0 = null
+    property MinZoom: Integer read FMinZoom write SetMinZoom default 0;   // minZoom, 0 = null
     {*------------------------------------------------------------------------------
       True if MapMaker tiles should be used instead of regular tiles.
     -------------------------------------------------------------------------------}
     {=------------------------------------------------------------------------------
       A true si se debe usar el mosaico MapMaker en lugar del mosaico normal.
     -------------------------------------------------------------------------------}
-    property MapMaker: Boolean read FMapMaker write FMapMaker;
+    property MapMaker: Boolean read FMapMaker write FMapMaker default False;
   end;
 
   {*------------------------------------------------------------------------------
@@ -1142,21 +1142,21 @@ type
     {=------------------------------------------------------------------------------
       Activa el filtro
     -------------------------------------------------------------------------------}
-    property Filtered: Boolean read FFiltered write SetFiltered;
+    property Filtered: Boolean read FFiltered write SetFiltered default False;
     {*------------------------------------------------------------------------------
       Sets clickables the Panoramio photos
     -------------------------------------------------------------------------------}
     {=------------------------------------------------------------------------------
       Establece clicables las photos de Panoramio
     -------------------------------------------------------------------------------}
-    property Clickable: Boolean read FClickable write SetClickable;
+    property Clickable: Boolean read FClickable write SetClickable default True;
     {*------------------------------------------------------------------------------
       Show the layer. To true, shown the layer, to false is hidden
     -------------------------------------------------------------------------------}
     {=------------------------------------------------------------------------------
       Muestra la capa. A true, se muestra la capa, a false se oculta
     -------------------------------------------------------------------------------}
-    property Show: Boolean read FShow write SetShow;
+    property Show: Boolean read FShow write SetShow default False;
   end;
 
   {*------------------------------------------------------------------------------
@@ -1267,35 +1267,35 @@ type
     {=------------------------------------------------------------------------------
       Si en true, el layer recive los eventos del mouse
     -------------------------------------------------------------------------------}
-    property Clickable: Boolean read FClickable write SetClickable;
+    property Clickable: Boolean read FClickable write SetClickable default True;
     {*------------------------------------------------------------------------------
       By default, the input map is centered and zoomed to the bounding box of the contents of the layer. If this option is set to true, the viewport is left unchanged, unless the map's center and zoom were never set.
     -------------------------------------------------------------------------------}
     {=------------------------------------------------------------------------------
       Por defecto, el mapa se centra y se le aplica el zoom necesario para mostrar el contenido de la capa. Si esta opción está a true, la ventana no se cambia, y el cento y zoom del mapa no cambian.
     -------------------------------------------------------------------------------}
-    property PreserveViewport: Boolean read FPreserveViewport write SetPreserveViewport;
+    property PreserveViewport: Boolean read FPreserveViewport write SetPreserveViewport default False;
     {*------------------------------------------------------------------------------
       Whether to render the screen overlays.
     -------------------------------------------------------------------------------}
     {=------------------------------------------------------------------------------
       Para representar las superposiciones de la pantalla.
     -------------------------------------------------------------------------------}
-    property ScreenOverlays: Boolean read FScreenOverlays write SetScreenOverlays;
+    property ScreenOverlays: Boolean read FScreenOverlays write SetScreenOverlays default True;
     {*------------------------------------------------------------------------------
       Suppress the rendering of info windows when layer features are clicked.
     -------------------------------------------------------------------------------}
     {=------------------------------------------------------------------------------
       Desactiva el procesamiento de la ventana de información cuando se presionan las características de la capa.
     -------------------------------------------------------------------------------}
-    property SuppressInfoWindows: Boolean read FSuppressInfoWindows write SetSuppressInfoWindows;
+    property SuppressInfoWindows: Boolean read FSuppressInfoWindows write SetSuppressInfoWindows default False;
     {*------------------------------------------------------------------------------
       Show the layer. To true, shown the layer, to false is hidden
     -------------------------------------------------------------------------------}
     {=------------------------------------------------------------------------------
       Muestra la capa. A true, se muestra la capa, a false se oculta
     -------------------------------------------------------------------------------}
-    property Show: Boolean read FShow write SetShow;
+    property Show: Boolean read FShow write SetShow default False;
     {*------------------------------------------------------------------------------
       Url to KML file
     -------------------------------------------------------------------------------}
@@ -1345,7 +1345,7 @@ type
     {=------------------------------------------------------------------------------
       Muestra la capa. A true, se muestra la capa, a false se oculta
     -------------------------------------------------------------------------------}
-    property Show: Boolean read FShow write SetShow;
+    property Show: Boolean read FShow write SetShow default False;
   end;
 
   {*------------------------------------------------------------------------------
@@ -1388,7 +1388,7 @@ type
     {=------------------------------------------------------------------------------
       Muestra la capa. A true, se muestra la capa, a false se oculta
     -------------------------------------------------------------------------------}
-    property Show: Boolean read FShow write SetShow;
+    property Show: Boolean read FShow write SetShow default False;
   end;
 
   {*------------------------------------------------------------------------------
@@ -1431,7 +1431,7 @@ type
     {=------------------------------------------------------------------------------
       Muestra la capa. A true, se muestra la capa, a false se oculta
     -------------------------------------------------------------------------------}
-    property Show: Boolean read FShow write SetShow;
+    property Show: Boolean read FShow write SetShow default False;
   end;
 
   {*------------------------------------------------------------------------------
@@ -1486,42 +1486,42 @@ type
     {=------------------------------------------------------------------------------
       Muestra la capa. A true, se muestra la capa, a false se oculta
     -------------------------------------------------------------------------------}
-    property Show: Boolean read FShow write SetShow;
+    property Show: Boolean read FShow write SetShow default False;
     {*------------------------------------------------------------------------------
       Indicates if the layer is clickable or not.
     -------------------------------------------------------------------------------}
     {=------------------------------------------------------------------------------
       Indica si la capa es o no clicable.
     -------------------------------------------------------------------------------}
-    property Clickable: Boolean read FClickable write SetClickable;
+    property Clickable: Boolean read FClickable write SetClickable default True;
     {*------------------------------------------------------------------------------
       The color of labels on the weather layer.
     -------------------------------------------------------------------------------}
     {=------------------------------------------------------------------------------
       Color de las etiquetas sobre la capa weather.
     -------------------------------------------------------------------------------}
-    property LabelColor: TLabelColor read FLabelColor write SetLabelColor;
+    property LabelColor: TLabelColor read FLabelColor write SetLabelColor default lcBLACK;
     {*------------------------------------------------------------------------------
       Suppress the rendering of info windows when weather icons are clicked.
     -------------------------------------------------------------------------------}
     {=------------------------------------------------------------------------------
       Suprime el procesamiento de las ventanas de información cuando se hace clic en los iconos del tiempo.
     -------------------------------------------------------------------------------}
-    property SuppressInfoWindows: Boolean read FSuppressInfoWindows write SetSuppressInfoWindows;
+    property SuppressInfoWindows: Boolean read FSuppressInfoWindows write SetSuppressInfoWindows default False;
     {*------------------------------------------------------------------------------
       Unit to use for temperature.
     -------------------------------------------------------------------------------}
     {=------------------------------------------------------------------------------
       Unidad usada para la temperatura.
     -------------------------------------------------------------------------------}
-    property TemperatureUnit: TTemperatureUnit read FTemperatureUnit write SetTemperatureUnit;
+    property TemperatureUnit: TTemperatureUnit read FTemperatureUnit write SetTemperatureUnit default tuCELSIUS;
     {*------------------------------------------------------------------------------
       Unit to use for wind speed.
     -------------------------------------------------------------------------------}
     {=------------------------------------------------------------------------------
       Unidad usada para la velocidad del viento.
     -------------------------------------------------------------------------------}
-    property WindSpeedUnit: TWindSpeedUnit read FWindSpeedUnit write SetWindSpeedUnit;
+    property WindSpeedUnit: TWindSpeedUnit read FWindSpeedUnit write SetWindSpeedUnit default wsKILOMETERS_PER_HOUR;
   end;
 
   {*------------------------------------------------------------------------------
@@ -1888,7 +1888,7 @@ type
     -------------------------------------------------------------------------------}
     constructor Create(GMMap: TCustomGMMap); virtual;
   published
-    property Visible: Boolean read FVisible write SetVisible;
+    property Visible: Boolean read FVisible write SetVisible default False;
   end;
 
   {*------------------------------------------------------------------------------
@@ -2598,9 +2598,9 @@ type
     procedure DoMap; virtual;
   published
     property APIKey: string read FAPIKey write SetAPIKey;
-    property Active: Boolean read FActive write SetActive;
-    property IntervalEvents: Integer read FIntervalEvents write SetIntervalEvents;
-    property Precision: Integer read FPrecision write SetPrecision;
+    property Active: Boolean read FActive write SetActive default False;
+    property IntervalEvents: Integer read FIntervalEvents write SetIntervalEvents default 200;
+    property Precision: Integer read FPrecision write SetPrecision default 0;
     property RequiredProp: TRequiredProp read FRequiredProp write FRequiredProp;
     property NonVisualProp: TNonVisualProp read FNonVisualProp write FNonVisualProp;
     property Layers: TLayers read FLayers write FLayers;
@@ -4083,7 +4083,7 @@ begin
   FPosition := cpTOP_RIGHT;
   FStyle := mtcDEFAULT;
   FShow := True;
-  FMapTypeIds := [mtHYBRID, mtROADMAP, mtSATELLITE, mtTERRAIN];
+  FMapTypeIds := [mtHYBRID, mtROADMAP, mtSATELLITE, mtTERRAIN, mtOSM];
 end;
 
 { TOverviewMapControlOptions }
@@ -4292,6 +4292,7 @@ begin
   FMaxZoom := 0;
   FMinZoom := 0;
   FOptions := [Draggable, KeyboardShortcuts, ScrollWheel];
+  FMapMaker := False;
 end;
 
 procedure TNonVisualProp.SetMaxZoom(const Value: Integer);

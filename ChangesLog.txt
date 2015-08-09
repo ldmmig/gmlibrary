@@ -23,6 +23,15 @@ If you have installed TChromium browser, you can activate it at gmlib.inc file.
 CHANGE HISTORY
 ~~~~~~~~~~~~~~
 
+February 27, 2015
+ - Google Maps Library v1.5.2
+ - Improvement: Compiled under XE8.
+ - Improvement: TLinePoint -> added Tag property 
+ - Improvement: GMMap can use OpenStreetMap (GC: issue 49)
+ - bug fixed: Fixed problem with the Google Maps update 
+ - bug fixed: TCustomCircle -> bug fixed method SetRadius (thanks Thierry).
+ - bug fixed: TGMGeoCode -> TGeoResult.Geometry.LocationType is always gltNothing (GC: issue 46)
+
 October 20, 2014
  - Google Maps Library v1.5.0
  - Improvement: Compiled under XE7.

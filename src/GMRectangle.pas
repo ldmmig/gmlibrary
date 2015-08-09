@@ -75,13 +75,13 @@ Copyright (©) 2012, by Xavier Martinez (cadetill)
   The GMRectangle unit includes the base classes needed to show rectangles on Google Map map using the component TGMMap.
 
   @author Xavier Martinez (cadetill)
-  @version 1.5.0
+  @version 1.5.2
 -------------------------------------------------------------------------------}
 {=------------------------------------------------------------------------------
   La unit GMRectangle contiene las clases bases necesarias para mostrar rectángulos en un mapa de Google Maps mediante el componente TGMMap
 
   @author Xavier Martinez (cadetill)
-  @version 1.5.0
+  @version 1.5.2
 -------------------------------------------------------------------------------}
 unit GMRectangle;
 
@@ -232,12 +232,12 @@ type
     procedure CenterMapTo; override;
   published
     property Bounds: TLatLngBounds read FBounds write FBounds;
-    property Clickable: Boolean read FClickable write SetClickable;
-    property Editable: Boolean read FEditable write SetEditable;
+    property Clickable: Boolean read FClickable write SetClickable default True;
+    property Editable: Boolean read FEditable write SetEditable default False;
     property FillOpacity: Real read FFillOpacity write SetFillOpacity; // 0 to 1
     property StrokeOpacity: Real read FStrokeOpacity write SetStrokeOpacity; // 0 to 1
-    property StrokeWeight: Integer read FStrokeWeight write SetStrokeWeight; // 1 to 10
-    property Visible: Boolean read FVisible write SetVisible;
+    property StrokeWeight: Integer read FStrokeWeight write SetStrokeWeight default 2; // 1 to 10
+    property Visible: Boolean read FVisible write SetVisible default True;
     {*------------------------------------------------------------------------------
       InfoWindows associated object.
     -------------------------------------------------------------------------------}
